@@ -6,12 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "tsx --test lib/chat/chat.test.ts lib/chat/route.test.ts lib/embeddings/index.test.ts lib/rag/retrieve.test.ts lib/voice/browser.test.ts lib/voice/providers.test.ts lib/voice/sarvam.test.ts lib/voice/server-recognition.test.ts lib/voice/session.test.ts",
+    "ingest": "tsx scripts/ingest.ts",
+    "rag": "tsx scripts/test-rag.ts"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.116.0",
     "next": "16.3.5",
+    "pdf-parse": "^2.4.5",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -21,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   }
 }
